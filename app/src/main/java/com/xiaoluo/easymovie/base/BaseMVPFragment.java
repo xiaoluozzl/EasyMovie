@@ -1,12 +1,10 @@
 package com.xiaoluo.easymovie.base;
 
 /**
- * MVP Activity基类
- *
  * author: xiaoluo
- * date: 2017/8/17 11:22
+ * date: 2017/8/21 11:00
  */
-public abstract class BaseMVPActivity<T extends BasePresenter > extends BaseActivity implements BaseView {
+public abstract class BaseMVPFragment<T extends BasePresenter> extends BaseFragment implements BaseView {
 
     protected T mPresenter;
 
@@ -26,11 +24,12 @@ public abstract class BaseMVPActivity<T extends BasePresenter > extends BaseActi
      * 解除V和P的绑定
      */
     @Override
-    protected void onDestroy() {
+    public void onDestroyView() {
         if (mPresenter != null) {
             mPresenter.detachView();
+
         }
-        super.onDestroy();
+        super.onDestroyView();
     }
 
     /**

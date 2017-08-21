@@ -32,12 +32,14 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mUnbinder = ButterKnife.bind(this, view);
+        onViewCreated();
         initEvent();
     }
 
+
     @Override
-    public void onDestroy() {
-        super.onDestroy();
+    public void onDestroyView() {
+        super.onDestroyView();
         mUnbinder.unbind();
     }
 
@@ -52,4 +54,11 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
      * 初始化
      */
     protected abstract void initEvent();
+
+    /**
+     * view created
+     */
+    protected void onViewCreated() {
+
+    }
 }

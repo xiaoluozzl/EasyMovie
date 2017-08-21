@@ -1,5 +1,6 @@
 package com.xiaoluo.easymovie.module.main;
 
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,6 +13,7 @@ import android.widget.Button;
 
 import com.xiaoluo.easymovie.R;
 import com.xiaoluo.easymovie.base.BaseActivity;
+import com.xiaoluo.easymovie.module.TestActivity;
 import com.xiaoluo.easymovie.module.movie.MovieFragment;
 import com.xiaoluo.easymovie.module.movie.OnLineMovieFragment;
 import com.xiaoluo.easymovie.module.movie.TopMovieFragment;
@@ -74,6 +76,7 @@ public class MainActivity extends BaseActivity
             @Override
             public void onClick(View v) {
                 switchFragment(mMovieFragment, mContentId);
+                startActivity(new Intent(mContext, TestActivity.class));
             }
         });
 
